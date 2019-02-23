@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
+<body>
+<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="./js/data.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+
+<script>
+  $(function () {
+    //写法简单，异步请求
+    /*  //获取页面数组
+                $.getJSON("demo.json",function (data) {
+                    var dataArrays = data;
+                    var backRegion = dataArrays.backRegion;
+                    var equCostTittle = dataArrays.equCostTittle;
+                    var region1 = dataArrays.region1;
+                    var region2 = dataArrays.region2;
+                    var region3 = dataArrays.region3;
+                    var region4 = dataArrays.region4;
+                    var region5 = dataArrays.region5;
+                    var region6 = dataArrays.region6;
+                    var region7 = dataArrays.region7;
+                    var region8 = dataArrays.region8;
+                    var region9 = dataArrays.region9;
+                    var region10 = dataArrays.region10;
+                    var region11 = dataArrays.region11;
+                });*/
+    //写法稍微复杂，同步请求
+    $.ajax({
+      type: 'get',//请求方式
+      url: './json/nvzhutest.json',//地址，就是json文件的请求路径
+      dataType: 'json',//数据类型可以为 text xml json  script  jsonp
+      async: false,
+      success: function (data) {//返回的参数就是 action里面所有的有get和set方法的参数
+        // alert(data.length)
+        initImgList(data);
+      }
+    });
+  });
+
+</script>
+
+<h1>穿越女主生成器 by OO</h1>
+<button type="button" onclick="startGenerator()">一键生成女主</button>
+
+<table>
+  <tbody>
+  <tr>
+    <td id="qizhiText">气质：</td>
+    <td id="qizhi">--</td>
+  </tr>
+  <tr>
+    <td id="xinggeText">性格：</td>
+    <td id="xingge">--</td>
+  </tr>
+  <tr>
+    <td id="shenfenText">身份：</td>
+    <td id="shenfen">--</td>
+  </tr>
+  <tr>
+    <td id="jingliText">经历：</td>
+    <td id="jingli">--</td>
+  </tr>
+  <tr>
+    <td id="shijianText">时间：</td>
+    <td id="shijian">--</td>
+  </tr>
+  <tr>
+    <td id="didianText">地点：</td>
+    <td id="didian">--</td>
+  </tr>
+  <tr>
+    <td id="ganshenmeText">干什么：</td>
+    <td id="ganshenme">--</td>
+  </tr>
+  <tr>
+    <td id="ganqingText">感情线：</td>
+    <td id="ganqing">--</td>
+  </tr>
+  <tr>
+    <td id="nengliText">技能：</td>
+    <td id="nengli">--</td>
+  </tr>
+  <tr>
+
+  </tbody>
+</table>
+<img width="300" height="400"  id="nvzhu_img" />  </tr>
+
+<!--<h1>本来做这个就是自己玩玩，呵呵。</h1>-->
+<!--<h1>没想到在faceu上看见“变成拖拉机”，真荣幸。</h1>-->
+<!--<br>-->
+<!--<a href="https://adnmb1.com/t/15788691">讨论地址</a>-->
+
+<!--<a href="https://github.com/reed-chan/Random-waifu-generater">waifu_Source</a>-->
+<!--<a href="https://github.com/YSilver/Random-waifu-generater">hasiben_Source</a>-->
+
+</body>
+<!--<body>-->
+<!--  &lt;!&ndash;[if lte IE 9]>-->
+<!--    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>-->
+<!--  <![endif]&ndash;&gt;-->
+
+<!--  &lt;!&ndash; Add your site or application content here &ndash;&gt;-->
+<!--  <p>Hello world! This is HTML5 Boilerplate.</p>-->
+<!--  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>-->
+<!--  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>-->
+<!--  <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>-->
+<!--  <script src="js/plugins.js"></script>-->
+<!--  <script src="js/main.js"></script>-->
+
+<!--  &lt;!&ndash; Google Analytics: change UA-XXXXX-Y to be your site's ID. &ndash;&gt;-->
+<!--  <script>-->
+<!--    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;-->
+<!--    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')-->
+<!--  </script>-->
+<!--  <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
+<!--</body>-->
+
+</html>
